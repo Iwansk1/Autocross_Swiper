@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Autocross carousel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,38 +11,46 @@
 <header>
     <h1>Autocross swiper</h1>
 </header>
-    <!-- Slider main container -->
-<div class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide">
-        <div class="swiper-img">
-            <img src="Images/Sprinter.jpg" alt="">
+    <!-- Main Slider -->
+    <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-img">
+                    <img src="Images/Sprinter.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-img">
+                    <img src="Images/Kadett.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-img">
+                    <img src="" alt="Kever">
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
         </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="swiper-img">
-            <img src="Images/Kadett.png" alt="">
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="swiper-img">
-            <img src="" alt="Kever">
-        </div>
-      </div>
-      ...
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-  
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  
-    <!-- If we need scrollbar -->
-</div>
-  
+      
+    <!-- Thumbnail Slider -->
+    <div class="thumbs-swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="Images/Sprinter.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="Images/Kadett.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="Images/Kadett.png" alt="Kever">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>

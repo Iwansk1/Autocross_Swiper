@@ -1,43 +1,47 @@
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    speed: 800,
-    effect: 'creative',
-    creativeEffect:{
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 10,
+  slidesPerView: 4,
+});
+
+var swiper2 = new Swiper(".mySwiper2", {
+  direction: 'horizontal',
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 1,
+  speed: 800,
+  watchSlidesProgress: true,
+  effect: 'creative',
+  creativeEffect: {
       prev: {
-        shadow: false,
-        origin: "center",
-        translate: ['100%', 0, -1],
-        scale: 0.9,
+          shadow: false,
+          origin: "center",
+          translate: ['100%', 0, -1],
+          scale: 0.9,
       },
       next: {
-        shadow: false,
-        origin: "right",
-        translate: ['-100%', 0, 0],
-        scale: 1.2,
+          shadow: false,
+          origin: "right",
+          translate: ['-100%', 0, 0],
+          scale: 1.2,
       },
-    },
-
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
   },
-);
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+      swiper: swiper,
+
+  },
+});
+
+
 const slideBackgroundColors = ['#4B3CE5', '#000080', '#015513']; // Add more colors if you have more slides
 
 // Event listener for slide change
-swiper.on('slideChange', function () {
+swiper2.on('slideChange', function () {
     // Get the active slide index
-    const activeIndex = swiper.realIndex;
+    const activeIndex = swiper2.realIndex;
 
     // Fade out the body's background color
     document.body.style.transition = 'background-color 0.8s ease';
@@ -68,4 +72,5 @@ swiper.on('slideChange', function () {
     //   modifier: 1,
     //   slideShadows: false,
     // },
+
 
