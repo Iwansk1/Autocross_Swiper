@@ -3,7 +3,6 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     speed: 800,
-    grabCursor: true,
     effect: 'creative',
     creativeEffect:{
       prev: {
@@ -20,7 +19,38 @@ const swiper = new Swiper('.swiper', {
       },
     },
 
-    // Cards
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  },
+);
+const slideBackgroundColors = ['#4B3CE5', '#000080', '#015513']; // Add more colors if you have more slides
+
+// Event listener for slide change
+swiper.on('slideChange', function () {
+    // Get the active slide index
+    const activeIndex = swiper.realIndex;
+
+    // Fade out the body's background color
+    document.body.style.transition = 'background-color 0.8s ease';
+
+    // After a slight delay, change the background color and fade it in
+    setTimeout(() => {
+        document.body.style.backgroundColor = slideBackgroundColors[activeIndex];
+    }, 50); // Adjust the duration of the delay (in milliseconds) as needed
+});
+
+
+
+  // Cards
     // effect: 'cards',   
     // cardsEffect:{
     //   perSlideOffset: 130,
@@ -39,31 +69,3 @@ const swiper = new Swiper('.swiper', {
     //   slideShadows: false,
     // },
 
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  },
-);
-const slideBackgroundColors = ['#4B3CE5', '#000080', '#FFD650']; // Add more colors if you have more slides
-
-// Event listener for slide change
-swiper.on('slideChange', function () {
-    // Get the active slide index
-    const activeIndex = swiper.realIndex;
-
-    // Fade out the body's background color
-    document.body.style.transition = 'background-color 0.8s ease';
-
-    // After a slight delay, change the background color and fade it in
-    setTimeout(() => {
-        document.body.style.backgroundColor = slideBackgroundColors[activeIndex];
-    }, 50); // Adjust the duration of the delay (in milliseconds) as needed
-});
