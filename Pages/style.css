@@ -14,18 +14,21 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #4B3CE5; /* Optional: For better visualization */
+    background: rgb(204,204,204);
+    background: radial-gradient(circle, rgba(204,204,204,1) 0%, rgba(183,174,135,1) 50%, rgba(133,133,133,1) 100%); 
 }
 
 header {
+    display: flex;
     text-align: center;
+    margin: 30px;
 }
 
 .swiper {
-    width: 100%;
+    width: 90%;
     max-width: 100%;
     max-height: 100%;
-    height: 600px;
+    height: 70dvh;
     aspect-ratio: 1 / 1; /* This keeps the swiper square */
 }
 
@@ -49,9 +52,10 @@ header {
 
 .swiper-img img {
     max-width: 100%;
-    width: 900px;
+    width: 100%;
     max-height: 100%;
     object-fit: cover; /* This ensures the image covers the container without distorting */
+    border-radius: 3px;
 }
 
 .thumbs-swiper {
@@ -61,17 +65,16 @@ header {
 
 .thumbs-swiper .swiper-wrapper {
     display: flex;
-    gap: 40px;
-    justify-content: center;
+    margin-bottom: 20px;
+
 }
 
 .mySwiper   {
-    width: 100%;
+    width: 90%;
     overflow: hidden;
 }
 
 .mySwiper .swiper-slide {
-    width: 25%;
     height: 100%;
     opacity: 0.4;
 }
@@ -80,23 +83,20 @@ header {
     flex: 0 0 auto;
     width: auto; /* Adjust thumb width as needed */
     height: auto; /* Adjust thumb height as needed */
-    margin-right: 10px; /* Adjust spacing between thumbs as needed */
     overflow: hidden; /* Hide overflow */
     transition: transform 0.8s ease; /* Add transition effect */
 }
 
-.thumbs-swiper .swiper-slide:last-child {
-    margin-right: 0; /* Remove margin from the last thumb */
-}
+
 
 .mySwiper .swiper-slide-thumb-active {
     opacity: 1;
     transition:  0.8s ease; /* Add transition effect */
-
 }
 
 .thumbs-swiper .swiper-slide img {
     height: auto;
     width: 100%; /* Adjust thumb image width */
     object-fit: cover; /* Ensure the image covers the thumb container */
+    border-radius: 3px;
 }
