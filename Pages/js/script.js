@@ -1,6 +1,10 @@
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 10,
-  slidesPerView: 4,
+  slidesPerView: 3.3,
+  centeredSlidesBounds: true,
+  centerInsufficientSlides: true,
+  watchSlidesProgress: true,
+  loop: true,
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
@@ -9,7 +13,6 @@ var swiper2 = new Swiper(".mySwiper2", {
   spaceBetween: 10,
   slidesPerView: 1,
   speed: 800,
-  watchSlidesProgress: true,
   effect: 'creative',
   creativeEffect: {
       prev: {

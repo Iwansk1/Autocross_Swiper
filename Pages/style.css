@@ -66,8 +66,8 @@ header {
 }
 
 .mySwiper   {
-    max-width: 100%;
-    width: 80%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .mySwiper .swiper-slide {
@@ -82,7 +82,7 @@ header {
     height: auto; /* Adjust thumb height as needed */
     margin-right: 10px; /* Adjust spacing between thumbs as needed */
     overflow: hidden; /* Hide overflow */
-    transition: transform 0.3s ease; /* Add transition effect */
+    transition: transform 0.8s ease; /* Add transition effect */
 }
 
 .thumbs-swiper .swiper-slide:last-child {
@@ -91,6 +91,8 @@ header {
 
 .mySwiper .swiper-slide-thumb-active {
     opacity: 1;
+    transition:  0.8s ease; /* Add transition effect */
+
 }
 
 .thumbs-swiper .swiper-slide img {
