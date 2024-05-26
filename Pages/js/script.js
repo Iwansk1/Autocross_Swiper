@@ -6,22 +6,23 @@ var swiper = new Swiper(".mySwiper", {
 
 var swiper2 = new Swiper(".mySwiper2", {
   direction: 'horizontal',
+  zoom: true,
   loop: true,
   slidesPerView: 1,
-  speed: 800,
+  speed: 1200,
   effect: 'creative',
   creativeEffect: {
       prev: {
           shadow: false,
-          origin: "center",
-          translate: ['100%', 0, -1],
+          origin: "right",
+          translate: ['-85%', 0, -1],
           scale: 0.9,
       },
       next: {
           shadow: false,
-          origin: "right",
-          translate: ['-100%', 0, 0],
-          scale: 1.2,
+          origin: "left",
+          translate: ['100%', 0, 0],
+          scale: 1.1,
       },
   },
   navigation: {
@@ -30,10 +31,27 @@ var swiper2 = new Swiper(".mySwiper2", {
   },
   thumbs: {
       swiper: swiper,
-
   },
 });
 
+var infoSwiper = new Swiper(".mySwiper3", {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 1,
+  speed: 1200,
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+});
+
+document.getElementById("more-info").addEventListener("click", function() {
+  var activeSlideIndex = swiper2.realIndex + 1; // Get the active slide index (1-based)
+  var targetInfoscreen = document.querySelector('.infoscreen[data-slide="' + activeSlideIndex + '"]');
+  if (targetInfoscreen) {
+      targetInfoscreen.scrollIntoView({ behavior: 'smooth' });
+  }
+});
 
 // const slideBackgroundColors = ['#4B3CE5', '#000080', '#015513']; // Add more colors if you have more slides
 
