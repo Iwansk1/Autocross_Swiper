@@ -31,6 +31,10 @@ header {
     margin: 30px;
 }
 
+.more-info-container{
+    margin: 20px;
+}
+
 .swiper {
     width: 90%;
     max-width: 100%;
@@ -142,4 +146,8 @@ header {
 .swiper-button:hover{
     color: black;
 	background: rgba(255, 255, 255, 1);
+}
+
+.info-area{
+    font-size: 18px;
 }

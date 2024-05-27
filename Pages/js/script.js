@@ -9,6 +9,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   zoom: true,
   loop: true,
   slidesPerView: 1,
+  simulateTouch: false,
   speed: 1200,
   effect: 'creative',
   creativeEffect: {
@@ -45,11 +46,42 @@ var infoSwiper = new Swiper(".mySwiper3", {
   },
 });
 
+
+
+function updateCarInfoDisplay() {
+  var activeSlide = document.querySelector('.mySwiper2 .swiper-slide-active .swiper-zoom-container');
+  if (activeSlide) {
+      var carClass = activeSlide.getAttribute('data-class');
+      var engineCC = activeSlide.getAttribute('data-engine');
+      var drivetrain = activeSlide.getAttribute('data-drivetrain');
+
+      document.getElementById('car-class').textContent = carClass || 'N/A';
+      document.getElementById('engine-cc').textContent = engineCC || 'N/A';
+      document.getElementById('drivetrain').textContent = drivetrain || 'N/A';
+  }
+}
+
+// Event listener for Swiper's slide change
+swiper2.on('slideChangeTransitionEnd', function() {
+  updateCarInfoDisplay();
+});
+
+// Initialize the car information display on load
+updateCarInfoDisplay();
 document.getElementById("more-info").addEventListener("click", function() {
+  console.log("Button clicked!"); // Check if the event listener is triggered
+
   var activeSlideIndex = swiper2.realIndex + 1; // Get the active slide index (1-based)
-  var targetInfoscreen = document.querySelector('.infoscreen[data-slide="' + activeSlideIndex + '"]');
+  console.log("Active slide index:", activeSlideIndex); // Log the active slide index
+
+  var targetInfoscreen = document.querySelector(' .swiper-zoom-container[data-slide="' + activeSlideIndex + '"]');
+  console.log("Target info screen:", targetInfoscreen); // Log the target info screen element
+
   if (targetInfoscreen) {
+      console.log('Target found, scrolling into view');
       targetInfoscreen.scrollIntoView({ behavior: 'smooth' });
+  } else {
+      console.log('Target not found');
   }
 });
 
