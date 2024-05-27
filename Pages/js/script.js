@@ -35,16 +35,17 @@ var swiper2 = new Swiper(".mySwiper2", {
   },
 });
 
-var infoSwiper = new Swiper(".mySwiper3", {
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 1,
-  speed: 1200,
-  navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-  },
-});
+// var infoSwiper = new Swiper(".mySwiper3", {
+//   direction: 'horizontal',
+//   loop: true,
+//   slidesPerView: 1,
+//   simulateTouch: false,
+//   speed: 1200,
+//   navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//   },
+// });
 
 
 
@@ -68,22 +69,40 @@ swiper2.on('slideChangeTransitionEnd', function() {
 
 // Initialize the car information display on load
 updateCarInfoDisplay();
+
 document.getElementById("more-info").addEventListener("click", function() {
-  console.log("Button clicked!"); // Check if the event listener is triggered
+  var activeSlideIndex = swiper2.realIndex; // Get the active slide index (0-based)
+  
+  // Get the image corresponding to the active slide index
+  var targetImage = document.querySelector('.mySwiper2 .swiper-slide-active img');
+  
+  // Ensure target image exists
+  if (targetImage) {
+      // Display additional information
+      var carClass = targetImage.closest('.swiper-zoom-container').getAttribute('data-class');
+      var engineCC = targetImage.closest('.swiper-zoom-container').getAttribute('data-engine');
+      var drivetrain = targetImage.closest('.swiper-zoom-container').getAttribute('data-drivetrain');
+      var imageUrl = targetImage.src;
+      
+      var additionalInfoContent = document.getElementById('additional-info-content');
+      var additionalInfoImage = document.getElementById('additional-info-image');
+      
+      setTimeout(() => {
+        document.querySelector('.additional-info').scrollIntoView({ behavior: 'smooth' });
+      }, "100");
+      
 
-  var activeSlideIndex = swiper2.realIndex + 1; // Get the active slide index (1-based)
-  console.log("Active slide index:", activeSlideIndex); // Log the active slide index
-
-  var targetInfoscreen = document.querySelector(' .swiper-zoom-container[data-slide="' + activeSlideIndex + '"]');
-  console.log("Target info screen:", targetInfoscreen); // Log the target info screen element
-
-  if (targetInfoscreen) {
-      console.log('Target found, scrolling into view');
-      targetInfoscreen.scrollIntoView({ behavior: 'smooth' });
-  } else {
-      console.log('Target not found');
+      additionalInfoContent.innerHTML = `
+          <h2>Additional Information</h2>
+          <p><strong>Klasse:</strong> <span>${carClass || 'N/A'}</span></p>
+          <p>Motor Inhoud: <span>${engineCC || 'N/A'}</span></p>
+          <p>Aandrijving: <span>${drivetrain || 'N/A'}</span></p>
+      `;
+      additionalInfoImage.src = imageUrl;
   }
 });
+
+
 
 // const slideBackgroundColors = ['#4B3CE5', '#000080', '#015513']; // Add more colors if you have more slides
 

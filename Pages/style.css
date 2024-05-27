@@ -7,7 +7,7 @@
 
 h1 {
     color: white;
-    font-size: 48px;
+    font-size: 36px;
 }
 
 a {
@@ -28,12 +28,9 @@ body {
 header {
     display: flex;
     text-align: center;
-    margin: 30px;
+    margin: 10px;
 }
 
-.more-info-container{
-    margin: 20px;
-}
 
 .swiper {
     width: 90%;
@@ -148,6 +145,42 @@ header {
 	background: rgba(255, 255, 255, 1);
 }
 
-.info-area{
+.info-area-container{
     font-size: 18px;
+    margin-top: 10px;
+    display: none;
+}
+
+.info-area {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	gap: 20px;
+}
+
+.additional-info {
+	/* text-align: center; */
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.additional-info-image{
+    display: flex;
+    justify-content: center;
+    width: 75%;
+}
+.additional-info-image img{
+    width: 100%;
+    height: auto;
+}
+
+.additional-info-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }

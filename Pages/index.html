@@ -11,6 +11,7 @@
 <header>
     <h1>Autocross Carousel</h1>
 </header>
+
     <!-- Main Slider -->
     <div class="swiper mySwiper2">
         <div class="swiper-wrapper">
@@ -18,57 +19,57 @@
                 <a>More info <br> &#x2B07</a>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Class 1" data-engine="Max 1600cc" data-drivetrain="FWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Toerwagens Klasse 1" data-engine="Max 1600cc" data-drivetrain="2WD">
                     <img src="Images/Klasse 1.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Class 2" data-engine="Max 2200cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Toerwagens Klasse 2" data-engine="Max 2200cc" data-drivetrain="2WD">
                     <img src="Images/Klasse 2.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="3" data-engine="Unlimited cc's" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Toerwagens Klasse 3" data-engine="Unlimited cc's" data-drivetrain="2/4WD">
                     <img src="Images/Klasse 3.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="4" data-engine="Max 1400cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Toerwagens Klasse 4" data-engine="Max 1400cc" data-drivetrain="2WD">
                     <img src="Images/Klasse 4.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="5" data-engine="Max 2400cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Kevers Klasse 5" data-engine="Max 2400cc" data-drivetrain="2WD">
                     <img src="Images/klasse 5.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="6" data-engine="Max 600cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="JuniorBuggy Klasse 6" data-engine="Max 600cc" data-drivetrain="2/4WD">
                     <img src="Images/Klasse 6.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="7" data-engine="Max 1600cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="MotorfietsBuggy Klasse 7" data-engine="Max 1400cc" data-drivetrain="2/4WD">
                     <img src="Images/Klasse 7.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="8" data-engine="2200cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Buggy Klasse 8" data-engine="Max 1600cc" data-drivetrain="2/4WD">
                     <img src="Images/Klasse 8.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="9" data-engine="2200cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Buggy Klasse 9" data-engine="2000cc" data-drivetrain="2/4WD">
                     <img src="Images/Klasse 9.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="10" data-engine="2200cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="SuperBuggy Klasse 10" data-engine="Unlimited cc's" data-drivetrain="2/4WD">
                     <img src="Images/Klasse 10.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="11" data-engine="2200cc" data-drivetrain="FWD/RWD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="MiniBuggy Klasse 11" data-engine="200cc" data-drivetrain="2WD">
                     <img src="Images/Klasse 11.jpg" alt="">
                 </div>
             </div>
@@ -81,6 +82,17 @@
         </div>
     </div>
       
+    
+        <!-- Info per racing class -->
+        <section class="info-area-container">
+            <div class="info-area" id="info-area">
+                <p>Klasse: <span id="car-class"></span></p>
+                <p>Motor Inhoud: <span id="engine-cc"></span></p>
+                <p>Aandrijving: <span id="drivetrain"></span></p>
+            </div>
+        </section>
+        
+
     <!-- Thumbnail Slider -->
     <div class="thumbs-swiper mySwiper">
         <div class="swiper-wrapper">
@@ -121,11 +133,7 @@
         </div>
     </div>
 
-
-    <div class="more-info-container">
-        <h1>More Information</h1>
-    </div>
-
+<!-- 
     <div class="swiper mySwiper3">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -183,18 +191,20 @@
                     <img src="Images/Klasse 11.jpg" alt="">
                 </div>
             </div>
-            <!-- Add more swiper-zoom-containers as needed -->
         </div>
     </div>
+ -->
+ 
+<!-- Additional Information Section -->
+<section class="additional-info">
+    <div class="additional-info-content" id="additional-info-content">
+        <!-- Placeholder for additional information content -->
+    </div>
+    <div class="additional-info-image">
+        <img id="additional-info-image" src="" alt="">
+    </div>
+</section>
 
-    <!-- Info per racing class -->
-    <section class="info-area-container">
-        <div id="info-area">
-            <p>Class: <span id="car-class"></span></p>
-            <p>Engine cc's: <span id="engine-cc"></span></p>
-            <p>Drivetrain: <span id="drivetrain"></span></p>
-        </div>
-    </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
