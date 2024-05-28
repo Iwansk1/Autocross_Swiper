@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav>
+    <li>
+        <a href="#">Home</a>
+        <a href="#">Autocross Informatie</a>
+    </li>
+</nav>
 <header>
     <h1>Autocross Carousel</h1>
 </header>
-
     <!-- Main Slider -->
     <div class="swiper mySwiper2">
         <div class="swiper-wrapper">
@@ -19,7 +25,7 @@
                 <a>More info <br> &#x2B07</a>
             </div>
             <div class="swiper-slide">
-                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Toerwagens Klasse 1" data-engine="Max 1600cc" data-drivetrain="2WD">
+                <div class="swiper-zoom-container" data-swiper-zoom="1.5" data-class="Toerwagens Klasse 1" data-engine="Max 1600cc" data-drivetrain="2WD" data-description="Productiewagens met motoren tot 1600 cc. Modificaties zijn beperkt om de auto's dicht bij hun originele staat te houden. Strenge veiligheidsregels gelden, en motoren moeten standaard lijken, hoewel interne aanpassingen zijn toegestaan. Turbo's en 4WD zijn niet toegestaan.">
                     <img src="Images/Klasse 1.jpg" alt="">
                 </div>
             </div>
@@ -202,6 +208,7 @@
     </div>
     <div class="additional-info-image">
         <img id="additional-info-image" src="" alt="">
+        <p id="additional-info-description"></p>
     </div>
 </section>
 

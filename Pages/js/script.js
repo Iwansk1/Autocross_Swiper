@@ -52,53 +52,55 @@ var swiper2 = new Swiper(".mySwiper2", {
 function updateCarInfoDisplay() {
   var activeSlide = document.querySelector('.mySwiper2 .swiper-slide-active .swiper-zoom-container');
   if (activeSlide) {
-      var carClass = activeSlide.getAttribute('data-class');
-      var engineCC = activeSlide.getAttribute('data-engine');
-      var drivetrain = activeSlide.getAttribute('data-drivetrain');
+    var carClass = activeSlide.getAttribute('data-class');
+    var engineCC = activeSlide.getAttribute('data-engine');
+    var drivetrain = activeSlide.getAttribute('data-drivetrain');
+    var description = activeSlide.getAttribute('data-description');
 
-      document.getElementById('car-class').textContent = carClass || 'N/A';
-      document.getElementById('engine-cc').textContent = engineCC || 'N/A';
-      document.getElementById('drivetrain').textContent = drivetrain || 'N/A';
+    document.getElementById('car-class').textContent = carClass || 'N/A';
+    document.getElementById('engine-cc').textContent = engineCC || 'N/A';
+    document.getElementById('drivetrain').textContent = drivetrain || 'N/A';
+    document.getElementById('additional-info-description').textContent = description || '';
   }
 }
 
-// Event listener for Swiper's slide change
-swiper2.on('slideChangeTransitionEnd', function() {
+swiper2.on('slideChangeTransitionEnd', function () {
   updateCarInfoDisplay();
 });
 
-// Initialize the car information display on load
 updateCarInfoDisplay();
 
-document.getElementById("more-info").addEventListener("click", function() {
+document.getElementById("more-info").addEventListener("click", function () {
   var activeSlideIndex = swiper2.realIndex; // Get the active slide index (0-based)
-  
+
   // Get the image corresponding to the active slide index
   var targetImage = document.querySelector('.mySwiper2 .swiper-slide-active img');
-  
+
   // Ensure target image exists
   if (targetImage) {
-      // Display additional information
-      var carClass = targetImage.closest('.swiper-zoom-container').getAttribute('data-class');
-      var engineCC = targetImage.closest('.swiper-zoom-container').getAttribute('data-engine');
-      var drivetrain = targetImage.closest('.swiper-zoom-container').getAttribute('data-drivetrain');
-      var imageUrl = targetImage.src;
-      
-      var additionalInfoContent = document.getElementById('additional-info-content');
-      var additionalInfoImage = document.getElementById('additional-info-image');
-      
-      setTimeout(() => {
-        document.querySelector('.additional-info').scrollIntoView({ behavior: 'smooth' });
-      }, "100");
-      
+    // Display additional information
+    var carClass = targetImage.closest('.swiper-zoom-container').getAttribute('data-class');
+    var engineCC = targetImage.closest('.swiper-zoom-container').getAttribute('data-engine');
+    var drivetrain = targetImage.closest('.swiper-zoom-container').getAttribute('data-drivetrain');
+    var description = targetImage.closest('.swiper-zoom-container').getAttribute('data-description');
+    var imageUrl = targetImage.src;
 
-      additionalInfoContent.innerHTML = `
-          <h2>Additional Information</h2>
-          <p><strong>Klasse:</strong> <span>${carClass || 'N/A'}</span></p>
-          <p>Motor Inhoud: <span>${engineCC || 'N/A'}</span></p>
-          <p>Aandrijving: <span>${drivetrain || 'N/A'}</span></p>
-      `;
-      additionalInfoImage.src = imageUrl;
+    var additionalInfoContent = document.getElementById('additional-info-content');
+    var additionalInfoImage = document.getElementById('additional-info-image');
+
+    setTimeout(() => {
+      document.querySelector('.additional-info').scrollIntoView({ behavior: 'smooth' });
+    }, "100");
+
+    additionalInfoContent.innerHTML = `
+        <h2>Additional Information</h2>
+        <p><strong>Klasse:</strong> <span>${carClass || 'N/A'}</span></p>
+        <p><strong>Motor Inhoud:</strong> <span>${engineCC || 'N/A'}</span></p>
+        <p><strong>Aandrijving:</strong> <span>${drivetrain || 'N/A'}</span></p>
+    `;
+
+    additionalInfoImage.src = imageUrl;
+    document.getElementById('additional-info-description').textContent = description || '';
   }
 });
 

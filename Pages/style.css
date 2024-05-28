@@ -13,6 +13,7 @@ h1 {
 a {
     font-size: 24px;
     color: white;
+    text-decoration: none;
 }
 
 body {
@@ -28,10 +29,23 @@ body {
 header {
     display: flex;
     text-align: center;
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
-
+nav{
+    width: 90%;
+    height: 40px;
+    list-style: none;
+    line-height: 40px;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.5) ;
+}
+li{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+}
 .swiper {
     width: 90%;
     max-width: 100%;
@@ -178,9 +192,47 @@ header {
     height: auto;
 }
 
-.additional-info-content{
+/* Additional Information Section */
+.additional-info {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.additional-info-image {
+    width: 75%;
+}
+
+.additional-info-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.additional-info-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
+}
+
+.additional-info-content h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.additional-info-content p {
+    font-size: 18px;
+    color: white;
+}
+
+.additional-info-content p strong {
+    font-weight: bold;
+    color: #ffd700; /* Golden color */
 }
