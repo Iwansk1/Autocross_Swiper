@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "class": "Toerwagens Klasse 1",
+            "engine": "Max 1600cc",
+            "drivetrain": "FWD/RWD",
+            "image": "Images/Klasse 1.jpg",
+            "description": "Description for Class 1"
+        },
+        {
+            "class": "Toerwagens Klasse 2",
+            "engine": "Max 2200cc",
+            "drivetrain": "FWD/RWD",
+            "image": "Images/Klasse 2.jpg",
+            "description": "Description for Class 2"
+        }
+    ]
+}
