@@ -112,9 +112,9 @@ li{
 
 .thumbs-swiper .swiper-slide {
     flex: 0 0 auto;
-    width: auto; /* Adjust thumb width as needed */
-    height: auto; /* Adjust thumb height as needed */
-    overflow: hidden; /* Hide overflow */
+    width: auto; 
+    height: auto; 
+    overflow: hidden; 
     transition: filter 1.2s ease; /* Add transition effect */
     filter: opacity(50%);
     border: solid 1px black;
