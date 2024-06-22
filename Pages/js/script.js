@@ -1,3 +1,26 @@
+// Get the swiper wrapper elements
+const mainSwiperWrapper = document.querySelector('.mySwiper2 .swiper-wrapper');
+const thumbSwiperWrapper = document.querySelector('.thumbs-swiper .swiper-wrapper');
+
+// Clear existing thumbnails
+thumbSwiperWrapper.innerHTML = '';
+
+// Loop through each main slide and create corresponding thumbnail
+mainSwiperWrapper.querySelectorAll('.swiper-slide').forEach(slide => {
+    const imgElement = slide.querySelector('img');
+    const zoomContainer = slide.querySelector('.swiper-zoom-container');
+
+    // Only create thumbnail if both imgElement and zoomContainer are present
+    if (imgElement && zoomContainer) {
+        const thumbSlide = document.createElement('div');
+        thumbSlide.classList.add('swiper-slide');
+        thumbSlide.innerHTML = `<img src="${imgElement.src}" alt="${imgElement.alt}">`;
+        thumbSwiperWrapper.appendChild(thumbSlide);
+    } else {
+        slide.remove();
+    }
+});
+// Initialize the secondary swiper after setting up thumbnails
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 25,
   slidesPerView: 4,
@@ -34,9 +57,6 @@ var swiper2 = new Swiper(".mySwiper2", {
       swiper: swiper,
   },
 });
-
-
-
 
 // Add an event listener to the "more-info" button for click events
 document.getElementById("more-info").addEventListener("click", function () {
@@ -79,7 +99,6 @@ document.getElementById("more-info").addEventListener("click", function () {
     document.getElementById('additional-info-description').textContent = description || '';
   }
 });
-
 
 
 //Experiments 
