@@ -217,8 +217,12 @@ li{
     text-align: center;
 }
 
-#additional-info-description{
-    background-color: white;
+#additional-info-description {
+	background-color: rgba(217, 217, 217, 0.6);
+	border-radius: 5px;
+	padding: 10px;
+	filter: drop-shadow(0 0 0.75rem #cbb3b3);
+	border: 1px solid;
 }
 
 
@@ -245,6 +249,7 @@ li{
     color: rgb(27, 27, 27) 
 }
 
+/* Button */
 .top-btn{
     display: none;
     width: 50px;
