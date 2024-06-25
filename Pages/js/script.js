@@ -20,6 +20,8 @@ mainSwiperWrapper.querySelectorAll('.swiper-slide').forEach(slide => {
         slide.remove();
     }
 });
+
+
 // Initialize the secondary swiper after setting up thumbnails
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 25,
